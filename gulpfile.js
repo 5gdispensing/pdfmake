@@ -25,6 +25,15 @@ var uglifyOptions = {
 	}
 };
 
+gulp.task('uglify', function () {
+	return gulp.src('./build/pdfmake.js')
+		.pipe(sourcemaps.init())
+		.pipe(uglify())
+		.pipe(rename({extname: '.min.js'}))
+		.pipe(sourcemaps.write('./'))
+		.pipe(gulp.dest('build'));
+});
+
 gulp.task('build', function () {
 	var pkg = require('./package.json');
 	return gulp.src('src/browser-extensions/pdfMake.js')

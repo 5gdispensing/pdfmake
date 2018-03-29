@@ -37,6 +37,7 @@
   },
   "scripts": {
     "build": "gulp build",
+    "uglify": "gulp uglify",
     "test": "gulp"
   },
   "repository": {
